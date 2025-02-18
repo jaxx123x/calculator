@@ -65,8 +65,12 @@
         }
     }
     for (let m = 1; m < resultFormula.length; m++) {
-        if (resultFormula[m] === "-" && (resultFormula[m - 1] === "X" || resultFormula[m - 1] === "+" || resultFormula[m - 1] === "÷" || isNaN(resultFormula[m-1]))) {
+        if (resultFormula[m] === "-" && (resultFormula[m - 1] === "X" || resultFormula[m - 1] === "+" || resultFormula[m - 1] === "÷")) {
             resultFormula.splice(m, 2, resultFormula[m].toString() + resultFormula[m + 1].toString());
+            m -= 1;
+        }
+        else if (resultFormula[0] === "-") {
+            resultFormula.splice(0, 2, resultFormula[0].toString() + resultFormula[1].toString())
             m -= 1;
         }
     }
