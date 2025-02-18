@@ -1,23 +1,7 @@
     const clear = document.querySelector(".clear");
-    const divideNum = document.querySelector(".divide");
-    const product = document.querySelector(".product");
     const deleteElement = document.querySelector(".delete");
-    const seven = document.querySelector(".seven");
-    const eight = document.querySelector(".eight");
-    const nine = document.querySelector(".nine");
-    const minus = document.querySelector(".minus");
-    const four = document.querySelector(".four");
-    const five = document.querySelector(".five");
-    const six = document.querySelector(".six");
-    const plus = document.querySelector(".plus");
-    const one = document.querySelector(".one");
-    const two = document.querySelector(".two");
-    const three = document.querySelector(".three");
     const equal = document.querySelector(".equal");
-    const percent = document.querySelector(".percent");
-    const zero = document.querySelector(".zero");
-    const point = document.querySelector(".point");
-    const allButtons = document.querySelectorAll(".divide, .product, .seven, .eight, .nine, .minus, .four, .five, .six, .plus, .one, .two, .three, .percent, .zero, .point");
+    const allButtons = document.querySelectorAll(".divide, .product, .seven, .eight, .nine, .minus, .four, .five, .six, .plus, .one, .two, .three, .zero, .point");
     const screen = document.querySelector("#screen");
 
     function subtract (num1, num2){
@@ -26,28 +10,19 @@
     function add (num1, num2){
         return num1 + num2;
     }
-     
     function divide (num1, num2) {
         if (num1 === 0 || num2 === 0) return 0;
-        
         return num1/num2;
     }
-
     function multiply(num1, num2) {
         return num1 * num2;
     }
 
-    
-
     let resultFormula = [];
-    let heavyResult = [];
-    let result = 0;
     allButtons.forEach(button => {
     button.addEventListener("click", () => {
         resultFormula.push(button.textContent);
         screen.textContent = resultFormula.join("");
-
-        console.log(resultFormula);
     })
   });
 
@@ -101,7 +76,6 @@
             k -=2;
         }
     }
-    console.log(resultFormula);
     screen.textContent = resultFormula;
 });
 
@@ -113,7 +87,6 @@ clear.addEventListener("click", () => {
 deleteElement.addEventListener("click", () => {
     resultFormula.pop();
     screen.textContent = resultFormula.join("");
-          
 });
 
 
